@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="top-nav">
+    <span class="menu">MENU</span>
+    <ul>
+        <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
+        <li>@Html.ActionLink("NEW PRODUCTS", "Product", "Product") </li>
+        <li>@Html.ActionLink("SHIPPING", "shipping", "Product") </li>
+        <li>@Html.ActionLink("About Us", "About", "Home")</li>
+        
+    </ul>
+    <!--script-->
+    <script>
+        $("span.menu").click(function () {
+            $(".top-nav ul").slideToggle(500, function () {
+            });
+        });
+    </script>
+</div>
+
+        <div class="content">
+            <div class="col-md-8 content-right">
+                <div class="banner">
+                    <h1>Girlisssh</h1>
+                </div>
+                <div class="content-right-in">
+                    <h2>engagement <span>rings</span></h2>
+                    <div class="col-md-3 ring">
+                        <img src="/Content/Images/pi.jpg" alt=" ">\
+                        <div class="right-on">
+                            <p>PRICE <span>$2145</span></p>
+                            <h6> @Html.ActionLink("View", "detail", "Product")</h6>
+                        </div>
+                    </div>
+                    <div class="col-md-3 ring">
+                       <img src="/Content/Images/pi1.jpg" alt=" ">
+                        <div class="right-on">
+                            <p>PRICE <span>$2105</span></p>
+                            <h6> @Html.ActionLink("View", "detail", "Product")</h6>
+                        </div>
+                    </div>
+                    <div class="col-md-3 ring">
+                        <img src="/Content/Images/pi2.jpg" alt=" ">
+                        <div class="right-on">
+                            <p>PRICE <span>$1145</span></p>
+                            <h6> @Html.ActionLink("View", "detail", "Product")</h6>
+                        </div>
+                    </div>
+                    <div class="col-md-3 ring">
+                        <img src="/Content/Images/pi3.jpg" alt=" "/>
+                        <div class="right-on">
+                            <p>PRICE <span>$2195</span></p>
+                            <h6> @Html.ActionLink("View", "detail", "Product")</h6>
+                        </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="content-right-bottom">
+                    <h3><a href="single.html">Fusce <span>id venenatis</span> velit</a></h3>
+                    <p>Ut tempor, elit vel adipiscing elementum, odio velit adipiscing magna, non posuere nulla ante et felis. Phasellus venenatis nisi at erat euismod tristique. Nullam vestibulum aliquam ligula, quis ultricies dui pulvinar a. Maecenas adipiscing lectus nec justo semper et blandit purus consequat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin ut ante sit amet purus elementum porttitor faucibus at velit. Morbi dictum erat vitae sapien accumsan vitae ultricies risus euismod. Praesent pulvinar bibendum volutpat. In dignissim pretium urna id malesuada. </p>
+                </div>
+                <div class="content-right-bottom">
+                    <h3><a href="single.html">Fusce <span>id venenatis</span> velit</a></h3>
+
+                    <p>Ut tempor, elit vel adipiscing elementum, odio velit adipiscing magna, non posuere nulla ante et felis. Phasellus venenatis nisi at erat euismod tristique. Nullam vestibulum aliquam ligula, quis ultricies dui pulvinar a. Maecenas adipiscing lectus nec justo semper et blandit purus consequat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin ut ante sit amet purus elementum porttitor faucibus at velit. Morbi dictum erat vitae sapien accumsan vitae ultricies risus euismod. Praesent pulvinar bibendum volutpat. In dignissim pretium urna id malesuada. </p>
+                </div>
+            </div>
+            <div class="col-md-4 content-left">
+                <div class="search">
+                    <h5>Search Our Products</h5>
+                    <form>
+                        <input type="text" value="enter your search terms" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+                        <input type="submit" value="">
+                    </form>
+                   
+                </div>
+                <div class="content-top">
+                    <img class="img-responsive" src="/Content/Images/ri.jpg" alt=" ">
+                    <div class="top-content">
+                        <p>TODAYS SPECIAL</p>
+                        <span>WAS  $ 299</span>
+                        <b>NOW $ 150</b>
+                        @Html.ActionLink("More Information", "detail", "Product")
+                    </div>
+                   
+                </div>
+                <div class="content-middle">
+                    <div class="single-bottom">
+                        <h4>Categories</h4>
+                        <ul>
+                            <li><a href="#"><i> </i>Bags</a></li>
+                            <li><a href="#"><i> </i>Jewellery</a></li>
+                            <li><a href="#"><i> </i>Watches</a></li>
+                            <li><a href="#"><i> </i>hats</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearfix"> </div>
+        </div>
+        
+ 

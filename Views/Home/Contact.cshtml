@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<!---->
+<div class="top-nav">
+    <span class="menu">MENU </span>
+    <ul>
+        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+        <li>@Html.ActionLink("NEW PRODUCTS", "Product", "Product") </li>
+        <li>@Html.ActionLink("SHIPPING", "shipping", "Product") </li>
+        <li>@Html.ActionLink("About Us", "About", "Home")</li>
+    </ul>
+    <!--script-->
+    <script>
+        $("span.menu").click(function () {
+            $(".top-nav ul").slideToggle(500, function () {
+            });
+        });
+    </script>
+</div>
+<!---->
+
+<div class="contact">
+    <h2>Contact</h2>
+    
+    <div class="col-md-6 contact-bottom">
+        
+        <div>
+            <span>Your Name </span>
+            <input type="text" value="">
+        </div>
+        <div>
+            <span>Your Email </span>
+            <input type="text" value="">
+        </div>
+        <div>
+            <span>Subject</span>
+            <input type="text" value="">
+        </div>
+        <div>
+            <span>Your Message</span>
+            <textarea> </textarea>
+        </div>
+        <input type="submit" value="SEND">
+    </div>
+    <div class="clearfix"> </div>
+</div>
+
+		

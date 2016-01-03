@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "gifts";
+}
+
+<!---->
+<div class="top-nav">
+    <span class="menu">MENU</span>
+    <ul>
+        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+        <li class="active">@Html.ActionLink("NEW PRODUCTS", "Product", "Product") </li>
+        <li>@Html.ActionLink("SHIPPING", "shipping", "Product") </li>
+        <li>@Html.ActionLink("About Us", "About", "Home")</li>
+    </ul>
+    <!--script-->
+    <script>
+        $("span.menu").click(function () {
+            $(".top-nav ul").slideToggle(500, function () {
+            });
+        });
+    </script>
+</div>
+<!---->
+<div class="gift-package">
+    <h2>Gift packages</h2>
+    <div class="gift-pack">
+        <div class="col-md-4 gift-grid">
+            <a href="single.html"><img class="img-responsive" src="/Content/Images/gi.jpg" alt=""></a>
+        </div>
+        <div class="col-md-8 velit">
+            <h3><a href="single.html">Fusce <span>id venenatis</span> velit</a></h3>
+            <p>Ut tempor, elit vel adipiscing elementum, odio velit adipiscing magna, non posuere nulla ante et felis. Phasellus venenatis nisi at erat euismod tristique. Nullam vestibulum aliquam ligula, quis ultricies dui pulvinar a. Maecenas adipiscing lectus nec justo semper et blandit purus consequat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin ut ante sit amet purus elementum porttitor faucibus at velit. Morbi dictum erat vitae sapien accumsan vitae ultricies risus euismod. Praesent pulvinar bibendum volutpat. In dignissim pretium urna id malesuada. Ut eu ipsum risus, ac pharetra nisi. </p>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    <div class="gift-top">
+        <div class="col-md-4 gift-grid-top">
+            <a href="single.html"><img class="img-responsive" src="/Content/Images/gi2.jpg" alt=""></a>
+            <div class="ut">
+                <p><a href="single.html">Ut tempor elit vel adipiscing</a></p>
+                <span>$1500.00</span>
+            </div>
+        </div>
+        <div class="col-md-4 gift-grid-top">
+            <a href="single.html"><img class="img-responsive" src="/Content/Images/gi1.jpg" alt=""></a>
+            <div class="ut">
+                <p><a href="single.html">Ut tempor elit vel adipiscing</a></p>
+                <span>$1000.00</span>
+            </div>
+        </div>
+        <div class="col-md-4 gift-grid-top">
+            <a href="single.html"><img class="img-responsive" src="/Content/Images/gi3.jpg" alt=""></a>
+            <div class="ut">
+                <p><a href="single.html">Ut tempor elit vel adipiscing</a></p>
+                <span>$3000.00</span>
+
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    <div class="gift-pack">
+        <div class="col-md-8 velit">
+            <h3><a href="single.html">Fusce <span>id venenatis</span> velit</a></h3>
+
+            <p>Ut tempor, elit vel adipiscing elementum, odio velit adipiscing magna, non posuere nulla ante et felis. Phasellus venenatis nisi at erat euismod tristique. Nullam vestibulum aliquam ligula, quis ultricies dui pulvinar a. Maecenas adipiscing lectus nec justo semper et blandit purus consequat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin ut ante sit amet purus elementum porttitor faucibus at velit. Morbi dictum erat vitae sapien accumsan vitae ultricies risus euismod. Praesent pulvinar bibendum volutpat. In dignissim pretium urna id malesuada. Ut eu ipsum risus, ac pharetra nisi. </p>
+        </div>
+        <div class="col-md-4 gift-grid">
+            <a href="single.html"><img class="img-responsive" src="/Content/Images/gi4.jpg" alt=""></a>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="footer-top">
+        <p class="footer-class">Copyright © 2015 Jewellry online Template by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+        <ul class="footer-bottom">
+            <li><a href="index.html">HOME</a><span>|</span></li>
+            <li><a href="about.html">  ABOUT  </a><span>|</span></li>
+            <li><a href="product.html">  PRODUCTS</a><span>|</span></li>
+            <li><a href="404.html">HELP</a><span>|</span></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+        <div class="clearfix"> </div>
+    </div>
+    <div class="bottom-footer-in">
+        <a href="index.html"><img src="/Content/Images/logo-1.png" alt=" "></a>
+    </div>
+</div>
+

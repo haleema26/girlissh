@@ -1,0 +1,137 @@
+﻿
+@{
+    ViewBag.Title = "Product";
+}
+
+<!---->
+<div class="top-nav">
+    <span class="menu">MENU </span>
+    <ul>
+        <li >@Html.ActionLink("Home", "Index", "Home")</li>
+        <li class="active">@Html.ActionLink("NEW PRODUCTS", "Product", "Product") </li>
+        <li>@Html.ActionLink("SHIPPING", "shipping", "Product") </li>
+        <li>@Html.ActionLink("About Us", "About", "Home")</li>
+    </ul>
+    <!--script-->
+    <script>
+        $("span.menu").click(function () {
+            $(".top-nav ul").slideToggle(500, function () {
+            });
+        });
+    </script>
+</div>
+<!---->
+
+<div class="product">
+    <h2>Products</h2>
+    <div class="product-top">
+        <div class="col-md-3 product-grid">
+            <a href="single.html"><img class="img-responsive" src="/Content/Images/pr.jpg" alt=""></a>
+            <div class="ut">
+                <p>@Html.ActionLink("Details", "detail", "Product")</p>
+                <span>$700.00</span>
+                <a href="single.html">ADD TO CART</a>
+            </div>
+        </div>
+        <div class="col-md-3 product-grid">
+            <a href="single.html"><img class="img-responsive" src="/Content/Images/pr1.jpg" alt=""></a>
+            <div class="ut">
+                <p>@Html.ActionLink("Details", "detail", "Product")</p>
+                <span>$1000.00</span>
+                <a href="single.html">ADD TO CART</a>
+            </div>
+        </div>
+        <div class="col-md-3 product-grid">
+            <a href="single.html"><img class="img-responsive" src="/Content/Images/pr2.jpg" alt=""></a>
+            <div class="ut">
+                <p>@Html.ActionLink("Details", "detail", "Product")</p>
+                <span>$500.00</span>
+                <a href="single.html">ADD TO CART</a>
+            </div>
+        </div>
+        <div class="col-md-3 product-grid">
+            <a href="single.html"><img class="img-responsive" src="/Content/Images/pr3.jpg" alt=""></a>
+            <div class="ut">
+                <p>@Html.ActionLink("Details", "detail", "Product")</p>
+                <span>$900.00</span>
+                <a href="single.html">ADD TO CART</a>
+            </div>
+        </div>
+
+        <div class="clearfix"> </div>
+    </div>
+    <div class="product-top">
+        <div class="col-md-3 product-grid">
+            <a href="single.html"><img class="img-responsive" src="/Content/Images/pr4.jpg" alt=""></a>
+            <div class="ut">
+                <p>@Html.ActionLink("Details", "detail", "Product")</p>
+                <span>$1100.00</span>
+                <a href="single.html">ADD TO CART</a>
+            </div>
+        </div>
+        <div class="col-md-3 product-grid">
+            <a href="single.html"><img class="img-responsive" src="/Content/Images/pr5.jpg" alt=""></a>
+            <div class="ut">
+                <p>@Html.ActionLink("Details", "detail", "Product")</p>
+                <span>$500.00</span>
+                <a href="single.html">ADD TO CART</a>
+            </div>
+        </div>
+        <div class="col-md-3 product-grid">
+            <a href="single.html"><img class="img-responsive" src="/Content/Images/pr6.jpg" alt=""></a>
+            <div class="ut">
+                <p>@Html.ActionLink("Details", "detail", "Product")</p>
+                <span>$400.00</span>
+                <a href="single.html">ADD TO CART</a>
+            </div>
+        </div>
+        <div class="col-md-3 product-grid">
+            <a href="single.html"><img class="img-responsive" src="/Content/Images/pr7.jpg" alt=""></a>
+            <div class="ut">
+                <p>@Html.ActionLink("Details", "detail", "Product")</p>
+                <span>$900.00</span>
+                <a href="single.html">ADD TO CART</a>
+            </div>
+        </div>
+
+        <div class="clearfix"> </div>
+    </div>
+    <div class="product-top">
+        <div class="col-md-3 product-grid">
+            <a href="single.html"><img class="img-responsive" src="/Content/Images/pr8.jpg" alt=""></a>
+            <div class="ut">
+                <p>@Html.ActionLink("Details", "detail", "Product")</p>
+                <span>$1000.00</span>
+                <a href="single.html">ADD TO CART</a>
+            </div>
+        </div>
+        <div class="col-md-3 product-grid">
+            <a href="single.html"><img class="img-responsive" src="/Content/Images/pr1.jpg" alt=""></a>
+            <div class="ut">
+                <p>@Html.ActionLink("Details", "detail", "Product")</p>
+                <span>$1500.00</span>
+                <a href="single.html">ADD TO CART</a>
+            </div>
+        </div>
+        <div class="col-md-3 product-grid">
+            <a href="single.html"><img class="img-responsive" src="/Content/Images/pr3.jpg" alt=""></a>
+            <div class="ut">
+                <p>@Html.ActionLink("Details", "detail", "Product")</p>
+                <span>$800.00</span>
+                <a href="single.html">ADD TO CART</a>
+            </div>
+        </div>
+        <div class="col-md-3 product-grid">
+            <a href="single.html"><img class="img-responsive" src="/Content/Images/pr.jpg" alt=""></a>
+            <div class="ut">
+                <p>@Html.ActionLink("Details", "detail", "Product")</p>
+                <span>$50.00</span>
+                <a href="single.html">ADD TO CART</a>
+            </div>
+        </div>
+
+        <div class="clearfix"> </div>
+    </div>
+</div>
+
+

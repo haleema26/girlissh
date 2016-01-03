@@ -1,0 +1,48 @@
+﻿
+
+@{
+    ViewBag.Title = "Log in";
+}
+
+<!---->
+<div class="top-nav">
+    <span class="menu">MENU </span>
+    <ul>
+        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+        <li>@Html.ActionLink("NEW PRODUCTS", "Product", "Product") </li>
+        <li>@Html.ActionLink("SHIPPING", "shipping", "Product") </li>
+        <li>@Html.ActionLink("About Us", "About", "Home")</li>
+    </ul>
+    <!--script-->
+    <script>
+        $("span.menu").click(function () {
+            $(".top-nav ul").slideToggle(500, function () {
+            });
+        });
+    </script>
+</div>
+<!---->
+
+<div class="account">
+    <h2>Account</h2>
+    <div class="col-md-6 account-left">
+        <h3>Registered Customers</h3>
+        <form>
+            <div>
+                <span>Email</span>
+                <input type="text">
+            </div>
+            <div>
+                <span>Password</span>
+                <input type="password">
+            </div>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+    <div class="col-md-6 account-right">
+        <h3>New Customers</h3>
+        <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
+        <a class="acount-btn" href="register.html">Create an Account</a>
+    </div>
+    <div class="clearfix"> </div>
+</div>

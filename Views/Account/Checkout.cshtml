@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "Checkout";
+}
+
+<!---->
+<div class="top-nav">
+    <span class="menu">MENU </span>
+    <ul>
+        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+        <li>@Html.ActionLink("NEW PRODUCTS", "Product", "Product") </li>
+        <li>@Html.ActionLink("SHIPPING", "shipping", "Product") </li>
+        <li>@Html.ActionLink("About Us", "About", "Home")</li>
+    </ul>
+    <!--script-->
+    <script>
+        $("span.menu").click(function () {
+            $(".top-nav ul").slideToggle(500, function () {
+            });
+        });
+    </script>
+</div>
+<!---->
+<div class="check-out">
+    <h2>Checkout</h2>
+    <table>
+        <tr>
+            <th>ITEM</th>
+            <th>QTY</th>
+            <th>PRICES</th>
+            <th>DELIVERY DETAILS</th>
+            <th>SUBTOTAL</th>
+        </tr>
+        <tr>
+            <td class="ring-in">
+                <a href="single.html" class="at-in"><img src="/Content/Images/pi.jpg" class="img-responsive" alt=""></a>
+                <div class="sed">
+                    <h5>Sed ut perspiciatis unde</h5>
+                    <p>(At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas) </p>
+
+                </div>
+                <div class="clearfix"> </div>
+            </td>
+            <td class="check"><input type="text" value="1" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}"></td>
+            <td>$1000.00</td>
+            <td>FREE SHIPPING</td>
+            <td>$1000.00</td>
+        </tr>
+        <tr>
+            <td class="ring-in">
+                <a href="single.html" class="at-in"><img src="/Content/Images/pi3.jpg" class="img-responsive" alt=""></a>
+                <div class="sed">
+                    <h5>Sed ut perspiciatis unde</h5>
+                    <p>(At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas) </p>
+                </div>
+                <div class="clearfix"> </div>
+            </td>
+            <td class="check"><input type="text" value="1" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}"></td>
+            <td>$2000.00</td>
+            <td>FREE SHIPPING</td>
+            <td>$2000.00</td>
+        </tr>
+        <tr>
+            <td class="ring-in">
+                <a href="single.html" class="at-in"><img src="/Content/Images/pi2.jpg" class="img-responsive" alt=""></a>
+                <div class="sed">
+                    <h5>Sed ut perspiciatis unde</h5>
+                    <p>(At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas) </p>
+                </div>
+                <div class="clearfix"> </div>
+            </td>
+            <td class="check"><input type="text" value="1" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}"></td>
+            <td>$1500.00</td>
+            <td>FREE SHIPPING</td>
+            <td>$1500.00</td>
+        </tr>
+    </table>
+    <a href="#" class="proceed">PROCEED TO BUY</a>
+    <div class="clearfix"> </div>
+</div>
+
