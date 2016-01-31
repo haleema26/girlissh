@@ -1,0 +1,26 @@
+﻿@model termProject.Models.Product
+
+@{
+    ViewBag.Title = "Update2Product";
+}
+
+@using (Html.BeginForm("Update", "Admin", FormMethod.Post, new
+{
+    enctype = "multipart/form-data",
+    style = "border: double;text-align:center"
+}))
+{
+
+    <br /><br /><br />
+    @Html.LabelFor(m => m.Name)
+    @Html.TextBoxFor(m => m.Name)<br /><br />
+    @Html.LabelFor(m => m.NoOfItems)
+    @Html.TextBoxFor(m => m.NoOfItems)<br /><br />
+    @Html.LabelFor(m => m.Price)
+    @Html.TextBoxFor(m => m.Price)<br /><br />
+    @Html.LabelFor(m => m.Category)
+    @Html.TextBoxFor(m => m.Category)<br /><br />
+    @Html.LabelFor(m => m.image)
+    @Html.TextBoxFor(m => m.image, new { type = "file" })<br /><br />
+    <input type="submit" id="btn" value="Update Product">}
+<br /><br /><br />

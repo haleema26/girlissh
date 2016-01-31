@@ -1,4 +1,4 @@
-/*--A Design by W3layouts 
+/*--A Design by W3layouts register-bottom-grid
 Author: W3layout
 Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
@@ -99,7 +99,7 @@ h1,h2,h3,h4,h5,h6,label,p{
 .shop a:hover{
 	text-decoration:none;
 }
-.shop a i{
+.shop i{
 	width: 12px;
 	height: 12px;
 	background: url(../Content/Images/img-sprite.png) no-repeat -9px -14px ;
@@ -201,10 +201,10 @@ h1,h2,h3,h4,h5,h6,label,p{
   float: right;
 }
 .content-left{
-	float:left;
+	float:right
 }
 .search{
-	position:relative;
+	
 	background: url(../Content/Images/se.png)no-repeat 0px 0px;
 	display:block;
 	width:100%;
@@ -336,15 +336,12 @@ h1,h2,h3,h4,h5,h6,label,p{
 .content-middle{
 	
 	display:block;
-	width:100%;
+	
 	min-height:199px;	
 	background-size: cover;
 	border:1px solid #4d4a4a;
 	border-radius:10px;
-	-webkit-border-radius: 10px;
-	-o-border-radius: 10px;
-	-moz-border-radius: 10px;
-	-ms-border-radius: 10px;
+	
 	
 }
  p.rem{
@@ -435,18 +432,21 @@ p.wide{
 	padding:0em 0 1em;
 	font-weight: 600;
 }
+
 .content-right-in h2 span{
 	color:#000;
 }
 .ring img{
 	box-shadow: 0px 1px 8px #000;
+     height: 100px;
+    width: 100px
 }
 .ring {
   text-align: center;
 }
 .right-on p{
 	color:#000;
-	font-size:0.7em;
+	font-size:0.9em;
 	font-weight: 600;
 	 padding: 1em 0;
 }
@@ -474,19 +474,15 @@ p.wide{
 	font-size:1.5em;
 	font-weight:600;
 }
-.content-right-bottom h3 a{
-	text-decoration:none;
-	color:#000;
+
+.content-right-bottom h3 span{
+	color:rgba(219,54,164,1);
+    font-style:italic;
 }
-.content-right-bottom h3 a span{
-	color:#d45bd4;
-}
-.content-right-bottom h3 a:hover{
-	color:#d45bd4;
-}
+
 .content-right-bottom p{
 	color:#000;
-	font-size:0.9em;
+	font-size:1em;
 	line-height: 2em;
 	padding: 1em 0 0;
 }
@@ -615,7 +611,7 @@ p.wide{
 	color: #000;
 }
 .book p {
-	font-size: 0.9em;
+	font-size: 1em;
 	color: #000;
 	line-height: 2em;
 	padding: 0.5em 0 0;
@@ -715,12 +711,7 @@ span.in-sed{
 	font-size: 0.9em;
 	line-height: 1.8em;
 }
-.bottom-ship-top h6{
-	font-size: 1.1em;
-	color: #AB48AA;
-	line-height: 1.7em;
-	padding:1em 0;
-}
+
 .shipping-right iframe{
 	width:100%;
 	min-height:240px;
@@ -869,7 +860,7 @@ span.in-sed{
   display: block;
   color: #a336a2;
 }
-.register-top-grid input[type="text"], .register-bottom-grid input[type="text"] {
+.register-top-grid input[type="text"], .register-bottom-grid input[type="text"]   {
 	padding:0.7em;
   width: 100%;
   background: none;
@@ -1170,11 +1161,12 @@ a.cart:hover{
 	font-size:1.4em;
 	padding: 0 0 1em;
 }
+
 .available ul li{
 	display:inline-block;
 	padding:0 0.5em 0 0;
 	color:#4c4c4c;
-	font-size:0.9em;
+	font-size:1em;
 }
 .available ul li select {
   outline: none;
@@ -1333,6 +1325,10 @@ td{
 a.at-in {
   float: left;
 }
+a.at-in img{
+  height: 80px;
+  width: 80px:
+}
 .sed {
     float: right;
 	width: 74%;
@@ -1369,6 +1365,7 @@ a.at-in {
   text-align: center;
   font-family: 'Courgette', cursive;
   padding: 0 0 1em;
+  float:left;
 }
 a.proceed {
   padding: 7px 18px;
@@ -1460,6 +1457,7 @@ p.footer-class a:hover{
 }
 .search {
   min-height: 86px;
+  margin-right:0px;
 }
 .search input[type="submit"] {
   width: 72px;
@@ -1580,6 +1578,7 @@ a.cart {
   -o-border-radius: 10px;
   -ms-border-radius:10px;
   -moz-border-radius: 10px;
+  float : right;
 }
 .search h5 {
   font-size: 0.6em;

@@ -1,4 +1,5 @@
-﻿@model termProject.Models.RegisterViewModel
+﻿@model termProject.Models.Customer
+
 @{
     ViewBag.Title = "Register";
 }
@@ -23,40 +24,101 @@
 <!---->
 <div class="register">
     <h2>Register</h2>
+    @using (Html.BeginForm("SignUp", "Customer", FormMethod.Post))// <form action="/Account/Login" action="post">
+    {
+    
+        <div class="col-md-6  register-top-grid">
+            <h3>Personal Information</h3>
+           <input type="text" name="n1"/>
+            <div>
+                <span>@Html.LabelFor(m => m.First_Name)</span>
+                @Html.TextBoxFor(m => m.First_Name)<br />
+            </div>
+            <div>
+                <span>@Html.LabelFor(m => m.Last_Name)</span>
+                @Html.TextBoxFor(m => m.Last_Name)<br />
+            </div>
+            <div>
+                <span>@Html.LabelFor(m => m.Username)</span>
+                @Html.TextBoxFor(m => m.Username, new { id = "un" })<br /><input type="button" id="b1" value="Check" />
 
-    <div class="col-md-6  register-top-grid">
-        <h3>Personal Information</h3>
-        <form>
-            <div>
-                <span>First Name</span>
-                <input type="text">
+                <div id="checking">Checking...</div>
+                <div id="result"></div>
             </div>
             <div>
-                <span>Last Name</span>
-                <input type="text">
+                <span>@Html.LabelFor(m => m.City)</span>
+                @Html.TextBoxFor(m => m.City)<br />
             </div>
             <div>
-                <span>Email Address</span>
-                <input type="text">
-            </div>
-           
-        </form>
-    </div>
-    <div class=" col-md-6  register-bottom-grid">
-        <h3>Login Information</h3>
-        <form>
-            <div>
-                <span>Password</span>
-                <input type="text">
+                <span>@Html.LabelFor(m => m.Email)</span>
+                @Html.TextBoxFor(m => m.Email)<br />
             </div>
             <div>
-                <span>Confirm Password</span>
-                <input type="text">
+                <span>@Html.LabelFor(m => m.Contact_No)</span>
+                @Html.TextBoxFor(m => m.Contact_No)<br />
+            </div>
+
+        </div>
+        <div class=" col-md-6  register-bottom-grid">
+            <h3>Login Information</h3>
+
+            <div>
+                <span> <label for='regpwd'>Password:</label> <br /></span>
+                <div class='pwdwidgetdiv' id='thepwddiv'></div>
+                <script type="text/javascript">
+                    var pwdwidget = new PasswordWidget('thepwddiv', 'regpwd');
+                    pwdwidget.MakePWDWidget();
+                </script>
+                <noscript>
+                    @Html.PasswordFor(m => m.Password, new { @id = "regpwd" }) <br />
+                </noscript>
+            </div>
+            <div></div>
+            <div>
+                <span>Confirm Password</span>   
+                @Html.Password("Password")
             </div>
             <div class="register-but">
-                <input type="submit" value="submit">
+                <input type="submit" value="Register">
             </div>
-        </form>
-    </div>
+
+        </div>
+    }
     <div class="clearfix"> </div>
+   
+
+    <script>
+
+        $(document).ready(function () {
+
+            $('#checking').hide();
+
+            $('#b1').click(function () {
+
+                var userName = $("#un").val();
+
+                $('#checking').show();
+                $.getJSON("/Account/CheckUserName?UserName=" + userName, function (data) {
+                    
+                    $('#checking').hide();
+                    if (data) {
+                        $('#result').text("User already exists in database");
+
+                    }
+                    else {
+                        $('#result').text("User Name is available");
+                    }
+                }
+                 );
+               
+
+            });
+        });
+    </script>
+
+
 </div>	
+
+@section s{
+<script type="text/javascript" src="@Url.Content("/Scripts/pwdwidget.js")"></script>
+}

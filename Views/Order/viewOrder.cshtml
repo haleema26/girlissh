@@ -1,0 +1,89 @@
+﻿@model termProject.Models.productOrderViewModel
+
+@{
+    ViewBag.Title = "View";
+}
+
+<!---->
+<div class="top-nav">
+    <span class="menu">MENU </span>
+    <ul>
+
+        <li>@Html.ActionLink("Home", "Index", "AdminHome")</li>
+        <li>@Html.ActionLink("Add PRODUCTS", "addProduct", "Admin") </li>
+        <li>@Html.ActionLink("Update PRODUCTS", "UpdateProduct", "Admin") </li>
+        <li>@Html.ActionLink("Delete PRODUCTS", "deleteProduct", "Admin")</li>
+        <li>@Html.ActionLink("View Orders", "viewOrder", "Order")</li>
+
+    </ul>
+    <!--script-->
+    <script>
+        $("span.menu").click(function () {
+            $(".top-nav ul").slideToggle(500, function () {
+            });
+        });
+    </script>
+</div>
+<!---->
+<div class="check-out">
+    <h2>Orders</h2>
+    <div class="col-md-4 content-left">
+        <div class="search">
+            <h5>Search Our Products</h5>
+            <form>
+                <input type="text" value="enter your search terms">
+                <input type="submit" value="">
+            </form>
+
+        </div>
+
+    </div>
+    <table>
+        <tr>
+            <th>ITEM</th>
+            <th>QTY</th>
+            <th>PRICES</th>
+            <th>DELIVERY Status</th>
+            <th>CUSTOMER USERNAME</th>
+            <th> EMAIL</th>
+            <th></th>
+        </tr>
+
+        @for (int i = 0; i < Model.pr.Count; i++)
+        {
+            <tr>
+                <td class="ring-in">
+                    <a href="#" class="at-in"><img src="@Url.Content(Model.pr[i].image)" class="img-responsive" alt=""></a>
+                    <div class="sed">
+                        <h5>@Model.pr[i].Name</h5>
+                        <p>@Model.pr[i].Description</p>
+                    </div>
+                    <div class="clearfix"> </div>
+                </td>
+                <td class="check"><input type="text" value=@Model.or[i].Quantity onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}"></td>
+
+                <td>$@Model.pr[i].Price</td>
+
+                <td>@Model.or[i].status</td>
+                <td>@Model.cs[i].Username</td>
+                    <td>@Model.cs[i].Email</td>
+               
+                @if (string.Compare(@Model.or[i].status, "pending", true) == 0)
+                {
+                    <td><a href="/Order/Deliver/@Model.or[i].Id" class="proceed">Deliver Order</a></td>
+                }
+                @if (!(string.Compare(@Model.or[i].status, "pending", true) == 0))
+                {
+                    <td>Delivered</td>
+                }
+            </tr>
+        }
+
+
+    </table>
+
+    <div class="clearfix"> </div>
+
+</div>
+
+

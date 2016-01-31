@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "signOut";
+}
+
+
+<script>
+    $(document).ready( function(){
+       
+        swal({
+            title: "Bubye!",
+            text: "See you again",
+            imageUrl: '/Content/Images/images.jpg',
+            timer: 2000,
+        showConfirmButton: false
+        });
+    });
+</script>
+
+@section alert{
+<script src="/Scripts/sweetalert-dev.js"></script>
+<link rel="stylesheet" href="/Content/sweetalert.css">
+}
+

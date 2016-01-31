@@ -27,14 +27,14 @@
     <h2>Account</h2>
     <div class="col-md-6 account-left">
         <h3>Registered Customers</h3>
-        <form>
+        <form action="/Account/Check" method="post">
             <div>
-                <span>Email</span>
-                <input type="text">
+                <span>Username</span>
+                <input type="text" name="username">
             </div>
             <div>
                 <span>Password</span>
-                <input type="password">
+                <input type="password" name="pass">
             </div>
             <input type="submit" value="Login">
         </form>
@@ -42,7 +42,7 @@
     <div class="col-md-6 account-right">
         <h3>New Customers</h3>
         <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
-        <a class="acount-btn" href="register.html">Create an Account</a>
+        <a class="acount-btn" href="/Account/Register">Create an Account</a>
     </div>
     <div class="clearfix"> </div>
 </div>

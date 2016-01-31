@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿@*<!DOCTYPE html>*@
 <html>
 <head>
     <meta charset="utf-8" />
@@ -9,12 +9,19 @@
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
     <title>@ViewBag.Title - Hook Me</title>
     
-    <link href="/Content/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+   
+    @RenderSection("scripts", required: false)
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    
+    <script type="text/javascript" src="@Url.Content("/Scripts/jquery.js")"></script>
     <script type="text/javascript" src="@Url.Content("/Scripts/jquery.min.js")"></script>
-    <script type="text/javascript" src="@Url.Content("/Scripts/move-top.js")"></script>
-    <script type="text/javascript" src="@Url.Content("/Scripts/easing.js")"></script>
+    @RenderSection("detail", required:false)
+    @RenderSection("s", required: false)
+    @RenderSection("alert", required: false)
+   @* <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>*@
+
+    @*For PAssword*@ 
+    <link rel="STYLESHEET" type="text/css" href="\Content\pwdwidget.css" />
+    
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
@@ -24,12 +31,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             });
         });
     </script>
-    <!--fonts-->
-    <link href='//fonts.googleapis.com/css?family=Michroma' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
-    <!--//fonts-->
-    <!-- Custom Theme files -->
-    <!--theme-style-->
+    
     <link href="/Content/style.css" rel="stylesheet" type="text/css" media="all" />
     <!--//theme-style-->
     @Styles.Render("~/Content/css")
@@ -40,8 +42,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="header">
         <div class="container">
             <ul>
-                <li>@Html.ActionLink("MY ACCOUNT", "Login", "Account") <span>|</span></li>
-                <li>@Html.ActionLink("Register", "Register", "Account") <span>|</span></li>
+                        @if (Session["userName"] != null )
+                       {
+                            <li>@Html.ActionLink("Sign Out", "SignOut", "Account") <span>|</span></li>
+                       }
+                       @if (Session["userName"] == null )
+                       {
+                            <li>@Html.ActionLink("LOGIN MY ACCOUNT", "Login", "Account") <span>|</span></li>
+                           <li>@Html.ActionLink("Register", "Register", "Account") <span>|</span></li>
+                       }
+                
                 <li>@Html.ActionLink("Contact Us", "Contact", "Home") </li>
             </ul>
             <div class="clearfix"> </div>
@@ -62,39 +72,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="clearfix"> </div>
                 </div>
                 <div class="top-header-in">
-                    <a href="#"><img class="img-responsive bag" src="/Content/Images/bag.png" alt=" "></a>
+                   
                     <div class="shop">
-                        <h6>Shopping basket</h6>
-                        <p>0 ITEMS | $0.00</p>
-                        @*<a href="checkout.html">Checkout<i> </i></a>*@
-                        <a href="#">@Html.ActionLink("Checkout", "Checkout", "Account")</a>
+                        
+                       @if (Session["userName"] != null && String.Compare(Session["userName"].ToString(),"Haleema",true)!=0)
+                       {
+                            <a href="#">@Html.ActionLink("Checkout", "Checkout", "Customer")
+                                </a><i></i>
+                       }
                     </div>
                 </div>
                 <div class="clearfix"> </div>
             </div>
-            <!---->
-            
-            <!---->
-            <!--<div class="navbar navbar-inverse navbar-fixed-top">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        @Html.ActionLink("Application name", "Index", "Home", null, new { @class = "navbar-brand" })
-                    </div>
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                        </ul>
-                        @Html.Partial("_LoginPartial")
-                    </div>
-                </div>
-            </div>-->
+          
+                        
             <div class="container body-content">
                 @RenderBody()
                 <hr />
@@ -103,13 +94,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </footer>
             </div>
 
-            @Scripts.Render("~/bundles/jquery")
+           
+           
             @Scripts.Render("~/bundles/bootstrap")
-            @RenderSection("scripts", required: false)
+            @Scripts.Render("~/bundles/jquery")
             <div class="footer">
                 <div class="footer-top">
 
                     <ul class="footer-bottom">
+                       
                         <li class="active">@Html.ActionLink("Home", "Index", "Home") <span>|</span></li>
                         <li>@Html.ActionLink("About Us", "About", "Home") <span>|</span></li>
                         <li>@Html.ActionLink("PRODUCTS", "Product", "Product") <span>|</span></li>

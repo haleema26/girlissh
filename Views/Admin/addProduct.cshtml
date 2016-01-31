@@ -1,0 +1,50 @@
+﻿@model termProject.Models.Product
+
+@{
+    ViewBag.Title = "addProduct";
+}
+<div class="top-nav">
+    <span class="menu">MENU</span>
+    <ul>
+
+        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+        <li>@Html.ActionLink("Add PRODUCTS", "addProduct", "Admin") </li>
+        <li>@Html.ActionLink("Update PRODUCTS", "UpdateProduct", "Admin") </li>
+        <li>@Html.ActionLink("Delete PRODUCTS", "deleteProduct", "Admin")</li>
+        <li>@Html.ActionLink("View Orders", "viewOrder", "Order")</li>
+
+    </ul>
+    <!--script-->
+    <script>
+        $("span.menu").click(function () {
+            $(".top-nav ul").slideToggle(500, function () {
+            });
+        });
+    </script>
+</div>
+
+<div class="content">
+    @using (Html.BeginForm("saveProduct", "Admin", FormMethod.Post, new
+{
+    enctype = "multipart/form-data",
+    style = "border: double;text-align:center"
+}))
+    {
+        <h3>ADD PRODUCT</h3>
+        <br /><br /><br />
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name)<br /><br />
+        @Html.LabelFor(m => m.NoOfItems)
+        @Html.TextBoxFor(m => m.NoOfItems)<br /><br />
+        @Html.LabelFor(m => m.Price)
+        @Html.TextBoxFor(m => m.Price)<br /><br />
+        @Html.LabelFor(m => m.Category)
+        @Html.TextBoxFor(m => m.Category)<br /><br />
+        @Html.LabelFor(m=>m.Description) 
+        @Html.TextAreaFor(m => m.Description)<br /><br />
+        @Html.LabelFor(m => m.image)
+        @Html.TextBoxFor(m => m.image, new { type = "file" })<br /><br />
+        <input type="submit" id="btn" value="Add Product">}
+    <br /><br /><br />
+    </div>
+
